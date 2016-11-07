@@ -1,0 +1,54 @@
+@font-face {
+font-family: BebasNeue;
+src: url("../fonts/bebasneue.otf") format("opentype");
+}
+
+@font-face {
+font-family: BebasNeueBold;
+font-weight: bold;
+src: url("../fonts/bebasneue-bold.otf") format("opentype");
+}
+
+@font-face {
+font-family: BebasNeueBook;
+src: url("../fonts/bebasneue-book.otf") format("opentype");
+}
+
+@font-face {
+font-family: AileronRegular;
+font-stretch: normal;
+font-style: normal;
+font-weight: normal;
+src: url("../fonts/aileron-regular.otf") format("opentype");
+}
+
+@font-face {
+font-family: AileronBold;
+font-weight: bold;
+src: url("../fonts/aileron-bold.otf") format("opentype");
+}
+
+@font-face {
+font-family: AileronHeavy;
+src: url("../fonts/aileron-heavy.otf") format("opentype");
+}
+
+@font-face {
+font-family: AileronSemiBold;
+src: url("../fonts/aileron-semibold.otf") format("opentype");
+}
+
+@font-face {
+font-family: AileronThin;
+src: url("../fonts/aileron-thin.otf") format("opentype");
+}
+
+@font-face {
+font-family: AileronBlack;
+src: url("../fonts/aileron-black.otf") format("opentype");
+}
+
+@font-face {
+font-family: AileronLight;
+src: url("../fonts/aileron-light.otf") format("opentype");
+}

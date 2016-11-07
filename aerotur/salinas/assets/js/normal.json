@@ -1,0 +1,26 @@
+[
+	{
+		"Id": 1,
+        "Latitude": -5.791436,
+        "Longitude": -35.200296,
+		"Descricao": "Matriz - Natal/RN - Rua Apodi, 583 - Tirol"
+    },
+    {
+		"Id": 2,
+        "Latitude": -5.850671,
+        "Longitude": -35.205730,
+		"Descricao": "Shopping Cidade Jardim - Natal/RN - Av. Engenheiro Roberto Freire, 2920, Loja 01E - Capim Macio"
+    },
+    {
+		"Id": 3,
+        "Latitude": -5.763198,
+        "Longitude": -35.373066,
+		"Descricao": "Aeroporto Aloízio Alves - Natal/RN - Aeroporto Internacional Governador Aluízio Alves"
+    },
+  	{
+		"Id": 4,
+    	"Latitude": -8.040662,
+    	"Longitude": -34.899876,
+		"Descricao": "Aerotur Aflitos - Recife/PE - Avenida Santos Dumont, 38 - Aflitos"
+  	}
+]
