@@ -1,7 +1,7 @@
 /*
   Theme Name: Portal no AR
   Description: Portal no AR - A Natureza do Jornalismo
-  Author: Beto Canuto [ Web Design / beto@quadradigital.com.br ], Douglas Boza [ Front-end / douglas@quadradigital.com.br ], Ed Moura [ Back-end / http://thechacal.github.io/ ]
+  Author: Ed Moura [ Back-end / http://thechacal.github.io/ ]
   Version: 1.0
 */
 
@@ -1810,7 +1810,7 @@ header{
 			.compar_post_rede:hover {
 			  opacity: 1;
 			}
-			
+
 		.infs_compar_post {
 		  display: inline-block;
 		  color: #009BA4;

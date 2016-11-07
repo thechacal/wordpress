@@ -5,7 +5,7 @@
  * @package portalnoar
  * @subpackage portalnoar
  * @since Portal no AR 1.0
- * Author: Beto Canuto [ Web Design / beto@quadradigital.com.br ], Douglas Boza [ Front-end / douglas@quadradigital.com.br ], Ed Moura [ Back-end / http://thechacal.github.io/ ]
+ * Author: Ed Moura [ Back-end / http://thechacal.github.io/ ]
  */
 ?>
 <!--start  HEADER  -->
@@ -45,7 +45,7 @@ include('anuncios/lateral_200_446_topo.php');
 	<div class="container">
 
 		<div class="principal_box1">
-			<?php 
+			<?php
 				include('anuncios/video_topo.php');
 			 ?>
 			<div class="noticia_principal">

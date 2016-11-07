@@ -4,7 +4,7 @@
  * @package portalnoar
  * @subpackage portalnoar
  * @since Portal no AR 1.0
- * Author: Beto Canuto [ Web Design / beto@quadradigital.com.br ], Douglas Boza [ Front-end / douglas@quadradigital.com.br ], Ed Moura [ Back-end / http://thechacal.github.io/ ]
+ * Author: Ed Moura [ Back-end / http://thechacal.github.io/ ]
  */
  	get_header();
   $id = $post->ID;
