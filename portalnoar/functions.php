@@ -8,7 +8,7 @@ date_default_timezone_set('America/Recife');
 
 /* Filter Custom Taxonomy Tag HTML Links */
 function custom_term_link_url($content) {
-    $content='http://dev.portalnoar.com.br/noticias/?tag='.str_replace('/', '', str_replace('http://dev.portalnoar.com.br/tag/', '', $content));
+    $content='http://portalnoar.com.br/noticias/?tag='.str_replace('/', '', str_replace('http://portalnoar.com.br/tag/', '', $content));
 
     return $content;
 }
@@ -309,11 +309,11 @@ add_action( 'init', 'addNoArGallery');
 add_action( 'init', 'changeCategoryLabel');
 add_action('save_post', 'required_image_post');
 add_action('admin_notices', 'display_message_post');
-// add_action( 'admin_menu', 'removeOptionsMenu' );
+add_action( 'admin_menu', 'removeOptionsMenu' );
 
-  register_nav_menus( array(
+register_nav_menus( array(
     'primary' => __( 'Primary Navigation', 'MainNav' ),
-  ));
+));
 
 
 
@@ -324,7 +324,7 @@ add_action('admin_notices', 'display_message_post');
 
 
 
-  
+
 
 
 ?>

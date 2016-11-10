@@ -361,7 +361,7 @@
 .box_envie_algo {
     position: fixed;
     width: 100%;
-    height: 1000px;
+    height: 10000px;
     background-color: rgba(0, 0, 0, 0.54);
     top: 0px;
     z-index: 9999999999999999999999999999999;
@@ -507,6 +507,45 @@
 	    font-size: 11px;
 	}
 
+
+.div_all_redes_footer .fa {
+    color: #fff;
+    background-color: #7C7C7B;
+    font-size: 21px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 100%;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+	.div_all_redes_footer a:hover {
+		opacity: 1;
+	}
+	.div_all_redes_footer .fa:hover {
+		background-color: #009FE3;
+	}
+
+	.desc_reds_blog_footer {
+			background-color: #009BA4;
+			color: #fff;
+			width: 236px;
+			margin: auto;
+			transition: .5s;
+			opacity: 0;
+			position: absolute;
+			font-weight: 400;
+			padding: 0px 4px;
+			text-align: center;
+			margin-top: -54px;
+	}
+		.email_rede_btn_footer:hover ~ .email_rede_footer{
+			opacity: 1;
+		}
+		.whatsapp_rede_btn_footer:hover ~ .whatsapp_rede_footer{
+			opacity: 1;
+		}
 
 
 @media(max-width:950px){

@@ -1,7 +1,7 @@
 /*
   Theme Name: Portal no AR
   Description: Portal no AR - A Natureza do Jornalismo
-  Author: Ed Moura [ Back-end / http://thechacal.github.io/ ]
+  Author: Beto Canuto [ Web Design / beto@quadradigital.com.br ], Douglas Boza [ Front-end / douglas@quadradigital.com.br ], Ed Moura [ Back-end / http://thechacal.github.io/ ]
   Version: 1.0
 */
 
@@ -426,7 +426,7 @@ header{
 		.desc_reds_blog_index {
 			background-color: #009BA4;
 			color: #fff;
-			width: 251px;
+			width: 236px;
 			margin: auto;
 			margin-bottom: 8px;
 			transition: .5s;
@@ -435,6 +435,8 @@ header{
 			font-weight: 400;
 			padding: 0px 4px;
 			top: 109px;
+			right: 302px;
+			text-align: center;
 		}
 		.email_rede_btn_index:hover ~ .email_rede_index{
 			opacity: 1;
@@ -519,6 +521,10 @@ header{
 	    width: 47%;
 	    padding-left: 10px;
 	}
+		.slideshow_p .bx-wrapper .bx-viewport{
+			border: none !important;
+			left: 0 !important;
+		}
 
 	.coluna1_p_not_hori {
 	    margin-top: 15px;
@@ -540,7 +546,7 @@ header{
 	    opacity:0.7;
 	}
 	.coluna1_p_not_hori img {
-	    width: 62px;
+	    width: 78px;
 	    display: inline-block;
 	    position: relative;
 	    vertical-align: top;
@@ -602,6 +608,10 @@ header{
 	    position: relative;
 		width: 32px;
 	}
+		#slideshow_p_prev img, #slideshow_p_next img {
+		    width: 31px;
+		    height: 70px;
+		}
 	.slideshow_p_const a {
 	    position: relative;
 	    padding: 28px 19px;
@@ -609,7 +619,10 @@ header{
 	    top: -50px;
 	}
 
-
+	.slideshow_p_item_desc {
+	    max-height: 98px;
+	    overflow: hidden;
+	}
 
 	.slideshow_p_item {
 	    margin-top: -22px;
@@ -787,7 +800,7 @@ header{
 
 .img_opiniao {
     background-size: cover;
-    height: 131px;
+    height: 178px;
     margin-top: 20px;
 }
 .titulo_opiniao {
@@ -888,6 +901,7 @@ header{
 		display: -moz-box;
 		border-bottom: 1px solid #009B69;
 		font-size: 23px;
+		font-weight: 900;
 	}
 
 
@@ -918,6 +932,7 @@ header{
 	    font-weight: bold;
 	    text-transform: uppercase;
 	    font-size: 13px;
+	    overflow: hidden;
 	}
 	.item_cb_text_desc {
 	    font-size: 13px;
@@ -1210,6 +1225,7 @@ header{
 	}
 	.item_post_lc {
 	    margin-bottom: 7px;
+	    height: 62px;
 	}
 	.num_post_lc {
 	    display: inline-block;
@@ -1229,6 +1245,8 @@ header{
 	    max-width: 250px;
 	    color: #F7941E;
 	    font-weight: bold;
+	    height: 36px;
+	    overflow: hidden;
 	    text-transform: uppercase;
 	}
 
@@ -1455,9 +1473,12 @@ header{
 
 	.editorial_subitem {
 	    margin: 10px 0px;
+	    height: 60px;
+	    overflow: hidden;
 	}
 	.editorial_subitem_img {
 	    display: inline-block;
+	    height: 34px;
 	    vertical-align: top;
 	}
 	.editorial_subitem_texto {
@@ -1571,6 +1592,7 @@ header{
 		border-bottom: 1px solid #007B85;
 	    display: inline-block;
 	    text-align: left;
+	    font-weight: 900;
 	    background-color: #fff;
 	}
 	.gentenoar_barra {
@@ -1791,6 +1813,8 @@ header{
 		}
 		.compar_post_rede {
 		  vertical-align: middle;
+		  top: 3px;
+		  position: relative;
 		}
 			.compar_post_rede .fa {
 			  background-color: #7C7C7B;
@@ -1810,16 +1834,17 @@ header{
 			.compar_post_rede:hover {
 			  opacity: 1;
 			}
-
+			
 		.infs_compar_post {
 		  display: inline-block;
 		  color: #009BA4;
 		  font-size: 17px;
 		  margin-left: 6px;
+		  vertical-align: middle;
 		}
 			.infs_compar_post1{
 				font-size: 30px;
-				top: 4px;
+				/*top: 4px;*/
 				position: relative;
 				line-height: 0;
 			}
@@ -2272,6 +2297,7 @@ header{
 	.ch_col3_item_titulo {
 	    color: #000;
 	    font-weight: 600;
+	    cursor: pointer;
 	    font-size: 13px;
 	}
 	.ch_col3_item_desc {
@@ -3018,6 +3044,7 @@ header{
 	    position: relative;
 	    right: 7px;
 	    color: #F7941E;
+	    margin-left: -5px !important;
 	}
 
 	.menu_pit_tvnoarin_item li {
@@ -3234,6 +3261,7 @@ header{
 	.titulo_all_post_interna {
 	    color: #000;
 	    font-size: 21px;
+	    cursor: pointer;
 	    line-height: 24px;
 	    font-weight: 900;
 	}
@@ -3642,6 +3670,7 @@ header{
 		width: 300px;
 		height: 250px;
 		max-height: 250px;
+		transition:1s;
 		position: fixed;
 		cursor: pointer;
 		top: 166px;
@@ -3668,10 +3697,12 @@ header{
 
 .banner_video_topo{
 		width: 618px;
-		max-height: 500px;
+		max-height: 0;
 		position: absolute;
 		cursor: pointer;
 		z-index: 9999999;
+		transition:1s;
+		overflow: hidden;
 		margin-top: 217px;
 }
 	.fechar_banner_video{
@@ -3693,6 +3724,41 @@ header{
 		}
 
 
+.container_banner_slide{
+    width: 300px;
+    position: absolute;
+    max-height: 0px;
+    transition:.7s;
+    z-index: 9999;
+    cursor: pointer;
+    overflow: hidden;
+    
+}
+	.container_banner_slide_450{
+		height: 450px;
+	}
+	.container_banner_slide_250{
+		height: 250px;	
+		margin-top: 102px;
+	}	
+
+	.fechar_banner_slide{
+	    float: right;
+	    z-index: 9;
+	    position: relative;
+	    background-color: rgba(101, 95, 95, 0.8);
+	    color: #fff;
+	    text-align: center;
+	    border-radius: 4px;
+	    width: 68px;
+	    font-size: 11px;
+	    font-family: 'Open Sans';
+	    cursor: pointer;
+	    opacity: .7;
+	}
+	.fechar_banner_slide:hover{
+		opacity: 1;
+	}
 
 
 .all_banner_mini {
@@ -3792,7 +3858,9 @@ header{
 
 
 @media(max-width:1043px){
-
+	.text_plantao_redacao{
+		width: 250px;
+	}
 
 	.item_menu_p{
 		font-size: 13px;
@@ -4092,7 +4160,12 @@ header{
 		width: 100%;
 	}
 
-
+	.slideshow_p{
+		width: 300px;
+	}
+	.coluna1_p{
+		width: 59%;
+	}
 }
 
 
@@ -4116,6 +4189,10 @@ header{
 	.img_post_all{
 		height: 125px;
 	}
+	.coluna1_p {
+	    width: 47%;
+	}
+
 }
 
 
@@ -4168,6 +4245,17 @@ header{
 
 
 @media(max-width:640px){
+	.banner_video_topo {
+	    width: 300px;
+	    left: 50%;
+	    margin-left: -150px;
+	    top: 50%;
+	    margin-top: -150px;
+	}
+		.banner_video_topo iframe{
+			height: 200px;
+		}
+
 	.slideshow_p{
 		display: none;
 	}
@@ -4398,6 +4486,19 @@ header{
 	.item_recn_img{
 		height: 80px;
 	}
+	
+	.banner_video_topo {
+	    width: 200px;
+	    left: 50%;
+	    margin-left: -100px;
+	    top: 50%;
+	    margin-top: -100px;
+	}
+		.banner_video_topo iframe{
+			height: 150px;
+		}
+
+
 }
 
 

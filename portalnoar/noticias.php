@@ -115,7 +115,7 @@
 				<div class="box_infs_all_post">
 					<div style="background-image:url('<?= $img[0] ?>')" class="img_post_all"></div>
 					<div class="conteudo_post_all_interna">
-						<p class="titulo_all_post_interna"><?= the_title(); ?></p>
+						<p onclick="location.href='<?= the_permalink(); ?>'" class="titulo_all_post_interna"><?= the_title(); ?></p>
 						<p class="desc_all_post_interna"><?= get_the_excerpt(); ?></p>
 					</div>
 					<div class="num_coments_all_post">

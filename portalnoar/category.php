@@ -5,7 +5,7 @@
 
 	get_header();
 
-	str_replace("","",str_replace("/","",$_SERVER ['REQUEST_URI']));
+	//str_replace("","",str_replace("/","",$_SERVER ['REQUEST_URI']));
 	$args = array('hide_empty'=>0, 'orderby' => 'name', 'order' => 'ASC');
 	$categorias = get_categories( $args );
 	foreach($categorias as $categoria) {
@@ -29,6 +29,8 @@
 		wp_reset_postdata();
 	endif;
 	$img = wp_get_attachment_image_src(get_post_thumbnail_id($id_post), array(2000,2000));
+	include('anuncios/banner_topo.php');
+
  ?>
 
 
@@ -40,6 +42,7 @@
 		</div>
 
 	<div class="container">
+
 	 	 <div class="chapeu_all_box">
 
 				<div class="ch_noticia_principal">
@@ -47,7 +50,10 @@
 					</div>
 					<a href=""><p style="background-color:<?= getColor($title) ?> !important;"><?= get_field('sutia_da_noticia',$id_post); ?></p></a>
 				</div>
-
+				<?php
+					include('anuncios/floater.php');
+					include('anuncios/video_topo.php');
+				 ?>
 				<?php
 					if($title=='Gente no AR'){
 						include('includes/gentenoar-interna.php');
@@ -62,6 +68,8 @@
 					<?php } ?>
 						<div class="ch_col3">
 						<?php
+						$page = get_page_by_title($title);
+						$id = $page->ID;
 						$posts=get_field('manchete_ultimas',$id);
 						if( $posts ):
 							foreach( $posts as $post ):
@@ -74,7 +82,7 @@
 								<div class="ch_col3_item_img" style="background-image:url(<?= $img[0] ?>)"></div>
 								<div class="ch_col3_item_text">
 									<p style="color: <?= getColor($title) ?> !important; " class="ch_col3_item_chapeu"><?= get_field('chapeu_da_noticia',$id_post); ?></p>
-									<p class="ch_col3_item_titulo"><?= the_title() ?></p>
+									<p onclick="location.href = '<?= get_the_permalink($id_post) ?>' " class="ch_col3_item_titulo"><?= the_title() ?></p>
 									<p class="ch_col3_item_desc"><?//= the_excerpt() ?></p>
 								</div>
 							</div>
@@ -105,7 +113,7 @@
 								<div class="ch_col3_item_img" style="background-image:url(<?= $img[0] ?>)"></div>
 								<div class="ch_col3_item_text">
 									<p style="color: <?= getColor($title) ?> !important; " class="ch_col3_item_chapeu"><?= get_field('chapeu_da_noticia',$id_post); ?></p>
-									<p class="ch_col3_item_titulo"><?= the_title() ?></p>
+									<p onclick="location.href = '<?= get_the_permalink($id_post) ?>' " class="ch_col3_item_titulo"><?= the_title() ?></p>
 									<p class="ch_col3_item_desc"><?//= the_excerpt() ?></p>
 								</div>
 							</div>
@@ -126,6 +134,9 @@
 	 	 </div>
 
 	 	 <div class="ultimas_chapeu_box">
+			 <?php
+ 			include('anuncios/lateral_200_446_editorias.php');
+ 			?>
 	 	 	<h1 class="ultimas_chapeu_titulo">últimas notícias</h1>
 
 	 	 	<div class="all_ult_not">
@@ -167,6 +178,7 @@
 	 	 	</div>
 
 	 	 </div>
+
  	</div>
 	 	 		<?php
 					include('includes/mais_lidas_comentadas.php');

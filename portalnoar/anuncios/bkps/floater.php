@@ -9,12 +9,12 @@
 	$args2 = array(
 			'post_type' => 'anuncios',
 			'posts_per_page'=>100,
-			'meta_key' => 'local_do_anuncio',
+			'meta_key' => 'capa_do_anuncio',
 			'orderby' => array( 'meta_value_num' => 'desc', 'date' => 'desc' ),
 			'order' => 'desc',
 			'meta_query' => array(
 														array(
-																		'key'     => 'local_do_anuncio',
+																		'key'     => 'capa_do_anuncio',
 																		'value'   => $value,
 																		'compare' => '='
 														),
@@ -44,25 +44,11 @@ if($aux){
 	$tempo_fechar_slide = '8';
 	echo "
 	<script>
-	
-
-		 if($(window).width() <= 950){
-
-		 	var html_floater = $('.banner_floater');
-		 	$('.banner_floater').remove();
-		 	$('.principal_box1').append(html_floater);
-
-	    }
-
-
 		$(document).ready(function(){
 
 				$('.fechar_banner_floater').click(function(){
 						$('.banner_floater').css({'max-height': '0', 'overflow':'hidden' });
 						$('.fechar_banner_floater').hide('slow');
-						
-						openVideo();
-
 				});
 
 		});

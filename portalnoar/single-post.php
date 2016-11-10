@@ -4,7 +4,7 @@
  * @package portalnoar
  * @subpackage portalnoar
  * @since Portal no AR 1.0
- * Author: Ed Moura [ Back-end / http://thechacal.github.io/ ]
+ * Author: Beto Canuto [ Web Design / beto@quadradigital.com.br ], Douglas Boza [ Front-end / douglas@quadradigital.com.br ], Ed Moura [ Back-end / http://thechacal.github.io/ ]
  */
 
  get_header();
@@ -15,9 +15,15 @@ setup_postdata($post);
 	$cont = get_post_meta($post->ID,'_contViews');
 	 if (!add_post_meta($post->ID, '_contViews', '1', true ) ) {
 		update_post_meta($post->ID, '_contViews', $cont[0]+1);
-	 }
+	 }else{
+     add_post_meta($post->ID, '_contViews', '1', true );
+   }
 
    $contShares=get_post_meta($post->ID,'_contShares');
+
+   if($contShares[0] == ""){
+      $contShares[0] = '0';
+   }
 
 	$img = wp_get_attachment_image_src(get_post_thumbnail_id($id), array(2000,2000));
 	$posttags = get_the_tags();
@@ -175,7 +181,7 @@ setup_postdata($post);
 					<div class="list_tags_noticia">
 					<?php if ($posttags) {
 						foreach($posttags as $tag) {
-							?><li><a href="/blog/?tag=<?php echo $tag->slug." ";?>"><?php echo $tag->name." ";?></a></li>
+							?><li><a href="/noticias/?tag=<?php echo $tag->slug." ";?>"><?php echo $tag->name." ";?></a></li>
 			<?php }
 					}?>
 		 			</div>

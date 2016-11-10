@@ -4,7 +4,7 @@
  * @package portalnoar
  * @subpackage portalnoar
  * @since Portal no AR 1.0
- * Author: Ed Moura [ Back-end / http://thechacal.github.io/ ]
+ * Author: Beto Canuto [ Web Design / beto@quadradigital.com.br ], Douglas Boza [ Front-end / douglas@quadradigital.com.br ], Ed Moura [ Back-end / http://thechacal.github.io/ ]
  */
  	get_header();
   $id = $post->ID;
@@ -14,11 +14,15 @@
   $cont = get_post_meta($post->ID,'_contViewsTv');
    if (!add_post_meta($post->ID, '_contViewsTv', '1', true ) ) {
     update_post_meta($post->ID, '_contViewsTv', $cont[0]+1);
+   }else{
+     add_post_meta($post->ID, '_contViewsTv', '1', true );
    }
 
    get_post_meta($post->ID,'_contWpFb');
     if (!add_post_meta($post->ID, '_contWpFb', '1', true ) ) {
       update_post_meta($post->ID, '_contWpFb', getCoutCommentsWpFb(get_the_ID()));
+    }else{
+      add_post_meta($post->ID, '_contWpFb', '1', true );
     }
 
  	$link_do_youtube = str_replace("https://www.youtube.com/watch?v=", "https://www.youtube.com/embed/", get_field('link_do_youtube',get_the_ID()));

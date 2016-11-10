@@ -5,7 +5,7 @@
  * @package portalnoar
  * @subpackage portalnoar
  * @since Portal no AR 1.0
- * Author: Ed Moura [ Back-end / http://thechacal.github.io/ ]
+ * Author: Beto Canuto [ Web Design / beto@quadradigital.com.br ], Douglas Boza [ Front-end / douglas@quadradigital.com.br ], Ed Moura [ Back-end / http://thechacal.github.io/ ]
  */
 ?>
 <!--start  HEADER  -->
@@ -27,7 +27,7 @@
 
 <?php
 
-
+$local_banner_topo = 1;
 include('anuncios/banner_topo.php');
 $page = get_page_by_title('Capa principal');
 $id = $page->ID;
@@ -35,7 +35,7 @@ if (get_field('ativar_capa_especial',$id)) {
 	include('includes/capa_especial.php');
 }
 
-include('anuncios/lateral_200_446_topo.php');
+include('anuncios/banner_lateral.php');
 
 
 
@@ -46,7 +46,7 @@ include('anuncios/lateral_200_446_topo.php');
 
 		<div class="principal_box1">
 			<?php
-				include('anuncios/video_topo.php');
+				include('anuncios/video.php');
 			 ?>
 			<div class="noticia_principal">
 				<?php
@@ -138,6 +138,10 @@ include('anuncios/lateral_200_446_topo.php');
 
 			<div class="slideshow_p">
 
+ 				<?php
+					include('anuncios/banner_slide.php');
+				 ?>
+
 				<div class="slideshow_p_const">
 
 					<div id="slideshow_p_prev">
@@ -149,6 +153,8 @@ include('anuncios/lateral_200_446_topo.php');
 					</div>
 
 				</div>
+
+
 
 				<div id="slideshow_p_all">
 					<?php
@@ -222,7 +228,7 @@ include('anuncios/lateral_200_446_topo.php');
 
 				 			<?php
 				 				$id_mini = 1;
-								include('anuncios/mini_300_100.php');
+								include('anuncios/banner_mini.php');
 							?>
 
 
@@ -403,10 +409,11 @@ include('anuncios/lateral_200_446_topo.php');
 </section>
 
 <?php
-include('anuncios/banner_meio.php');
+$local_banner_topo = 2;
+include('anuncios/banner_topo.php');
 
 
-include('anuncios/lateral_200_446.php');
+include('anuncios/banner_lateral.php');
 ?>
 
 <section id="gentear">
@@ -425,7 +432,7 @@ include('anuncios/lateral_200_446.php');
 						$my_categories = get_categories($args);
 				?>
 				<?php foreach( $my_categories as $category ): ?>
-				 	<a href="<?= 'http://dev.portalnoar.com.br/noticias/?cat='.$category->slug ?>"><li><?php echo $category->name;?></li></a>
+				 	<a href="<?= 'http://www.portalnoar.com.br/noticias/?cat='.$category->slug ?>"><li><?php echo $category->name;?></li></a>
 				<?php endforeach;
 				?>
 
@@ -732,7 +739,7 @@ include('anuncios/lateral_200_446.php');
 			</div>
 			<?php
 			$id_mini = 2;
-			include('anuncios/mini_300_100.php');
+			include('anuncios/banner_mini.php');
 			?>
 		</div>
 
@@ -762,7 +769,7 @@ include('anuncios/lateral_200_446.php');
 				$cate_cookie2_id = get_cat_ID($cate_cookie2_name);
 				$cate_cookie3_id = get_cat_ID($cate_cookie3_name);
 
-				$args1 = array('parent' => 0, 'child_of' => get_cat_ID('post'), 'exclude'=>' '.$cate_cookie1_id.', '.$cate_cookie2_id.', '.$cate_cookie3_id.' ', 'hide_empty'=>FALSE);
+				$args1 = array('parent' => 0, 'child_of' => get_cat_ID('post'), 'exclude'=>' 28994, '.$cate_cookie1_id.', '.$cate_cookie2_id.', '.$cate_cookie3_id.' ', 'hide_empty'=>FALSE);
 				$categories1 = get_categories( $args1 );
 
 
@@ -909,8 +916,8 @@ include('anuncios/lateral_200_446.php');
 						$id = $post->ID;
 				?>
 							<div class="editorial_subitem">
-								<div class="editorial_subitem_img">
-									<img src="<?php bloginfo('template_url') ?>/imgs/marc_tvnoar.png">
+								<div style="background-color:<?php echo getColor($category->name); ?>" class="editorial_subitem_img">
+									<img src="<?php bloginfo('template_url') ?>/imgs/20161108-{Portal-No-Ar}---Botão.png">
 								</div>
 								<div class="editorial_subitem_texto">
 									<a href="<?= the_permalink(); ?>"><p class="editorial_subitem_titulo"><?= the_title();?></p></a>
@@ -953,7 +960,7 @@ include('anuncios/lateral_200_446.php');
 						$my_categories = get_categories($args);
 				?>
 				<?php foreach( $my_categories as $category ): ?>
-				 	<a href="<?= 'http://dev.portalnoar.com.br/noticias/?cat='.$category->slug ?>"><li><?php echo $category->name;?></li></a>
+				 	<a href="<?= 'http://www.portalnoar.com.br/noticias/?cat='.$category->slug ?>"><li><?php echo $category->name;?></li></a>
 				<?php endforeach;
 				?>
 

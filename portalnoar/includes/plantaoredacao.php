@@ -31,7 +31,7 @@
 				<div class="text_plantao_redacao">
 					<p class="chapeu_plantao_redacao"><?= get_field('chapeu_da_noticia'); ?></p>
 					<p class="desc_plantao_redacao"><a href="<?= the_permalink(); ?>"><?= cutText(get_the_title(),100) ?></a></p>
-					<p class="subdesc_plantao_redacao"><?= cutText(get_field('sutia_da_noticia'),100) ?></p>
+					<!-- <p class="subdesc_plantao_redacao"><?= cutText(get_field('sutia_da_noticia'),100) ?></p> -->
 					<p class="data_plantao_redacao"><?= get_the_date('d/m/Y'); ?><i class="fa fa-clock-o" aria-hidden="true"></i> <?= get_the_date('H:i'); ?></p>
 				</div>
 			</div>

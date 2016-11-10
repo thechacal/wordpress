@@ -9,15 +9,15 @@ jQuery(document).ready(function($) {
 
 	  if($(window).width() <= 1000){
 
-	  	$('#container_box_banner_topo, #container_box_banner_meio').remove();
+	  	$('.container_box_banner_topo').remove();
 
 	  }
 
-	  if($(window).width() <= 650){
+	  // if($(window).width() <= 650){
 
-	  	$('.banner_video_topo').remove();
+	  // 	$('.banner_video_topo').remove();
 
-	  }
+	  // }
 
 
 
@@ -26,6 +26,7 @@ jQuery(document).ready(function($) {
 
 	 if($(window).width() <= 950){
 
+	 
     	// $('.item_menu_p').attr('href','javascript:void(0)');
     	$('.item_menu_all').each(function(index, el) {
     			

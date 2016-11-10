@@ -308,7 +308,7 @@
 					</div>
 
 					<div class="cont_voce_viu">
-						<a href=""><p class="tit_voce_viu"><?= the_title(); ?></p></a>
+						<a href="<?= get_the_permalink($post->ID) ?>"><p class="tit_voce_viu"><?= the_title(); ?></p></a>
 						<p class="desc_voce_viu"></p>
 					</div>
 				</div>
@@ -333,7 +333,7 @@
 							<img src="<?php bloginfo('template_url') ?>/imgs/voce_viu_simb.png">
 						</div>
 						<div class="voce_viu_subitem_texto">
-							<a href=""><p class="voce_viu_subitem_titulo"><?= the_title(); ?></p></a>
+							<a href="<?= get_the_permalink($post->ID) ?>"><p class="voce_viu_subitem_titulo"><?= the_title(); ?></p></a>
 							<p class="voce_viu_subitem_desc"></p>
 						</div>
 				</div>

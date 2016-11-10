@@ -63,38 +63,29 @@ $cidadePadrao = "natal";
 
 				<div class="faixa_topo_box">
 					<?php
-					$args_header = array(
-												'post_type' => 'post',
-												'posts_per_page'=>10,
-												'meta_key'=>'_contViews',
-												'orderby' => 'meta_value_num',
-												'order'=> 'DESC',
-					);
-					$posts_header = get_posts( $args_header );
-					foreach ( $posts_header as $post_header ){
-						setup_postdata( $post_header );
-						$id_header = $post_header->ID;
-						if(!get_field('listar_noticia',$id_header)){
-							$excluir_ids[]=$id_header;
-						}
-					}
-					$args_header = array(
-												'post_type' => 'post',
-												'posts_per_page'=>5,
-												'meta_key'=>'_contViews',
-												'orderby' => 'meta_value_num',
-												'order'=> 'DESC',
-												'post__not_in' => $excluir_ids
-											);
-					$posts_header = get_posts( $args_header );
-					foreach ( $posts_header as $post_header ){
-						setup_postdata( $post_header );
-						$id_header = $post_header->ID;
+						$args = array(
+								'post_type' => 'post',
+								'posts_per_page'=>10,
+								'meta_key' => 'listar_noticia',
+								'orderby' => array( 'meta_value_num' => 'desc', 'date' => 'desc' ),
+								'order' => 'desc',
+								'meta_query' => array(
+																			array(
+																							'key'     => 'listar_noticia',
+																							'value'   => true,
+																							'compare' => '='
+																			),
+															),
+						);
+						$myposts = get_posts( $args );
+						foreach ( $myposts as $post ){
+							setup_postdata( $post );
+							$id = $post->ID;
 					?>
 					<li class="faixa_topo_box_item">
 						<i class="fa fa-circle" aria-hidden="true"></i>
-							<a class="faixa_topo_box_nottit" href="<?= get_permalink($id_header) ?>">
-								<p class="cor0 faixa_topo_box_not_p"><?= cutText(get_the_title($id_header),80) ?></p>
+							<a class="faixa_topo_box_nottit" href="<?= the_permalink(); ?>">
+								<p class="cor0 faixa_topo_box_not_p"><?= get_the_title() ?></p>
 								 <span class="faixa_topo_hora"><?= get_the_date('H:i:s'); ?></span>
 							</a>
 					</li>
@@ -113,13 +104,13 @@ $cidadePadrao = "natal";
 		<div class="faixa_topo_sec">
 
 			<div class="container">
-				<a href="http://dev.portalnoar.com.br/"><i class="fa fa-home" aria-hidden="true"></i></a>
+				<a href="http://portalnoar.com.br/"><i class="fa fa-home" aria-hidden="true"></i></a>
 
 				<div class="menu_sec">
 					<nav>
-						<a href="http://dev.portalnoar.com.br/expediente/"> <li>expediente</li></a><i class="fa fa-circle" aria-hidden="true"></i>
+						<a href="http://portalnoar.com.br/expediente/"> <li>expediente</li></a><i class="fa fa-circle" aria-hidden="true"></i>
 						<li class="bt_envie_noticia">Envie sua Notícia</li><i class="fa fa-circle" aria-hidden="true"></i>
-						<a href="http://dev.portalnoar.com.br/blogs/"> <li>blogs</li></a><i class="fa fa-circle" aria-hidden="true"></i>
+						<a href="http://portalnoar.com.br/blogs/"> <li>blogs</li></a><i class="fa fa-circle" aria-hidden="true"></i>
 						<a href=""> <li>Opinião</li></a><i class="fa fa-circle" aria-hidden="true"></i>
 						<a href=""> <li>contato</li></a>
 
@@ -177,7 +168,7 @@ $cidadePadrao = "natal";
 						</div>
 
 						<div class="faixa_logo_box2">
-							<a href="http://dev.portalnoar.com.br/"><img src="<?php bloginfo('template_url') ?>/imgs/logo.png"></a>
+							<a href="http://portalnoar.com.br/"><img src="<?php bloginfo('template_url') ?>/imgs/logo.png"></a>
 						</div>
 
 						<div class="faixa_logo_box3 display_none_mobile">
@@ -270,7 +261,7 @@ $cidadePadrao = "natal";
 							 	 for ($i=0; $i < count($arr_menu); $i++) {
 							 ?>
 
-							  <ul class="item_menu_all">
+							  <ul id="<?php echo str_replace(" ", "", $arr_menu[$i]['titulo'] ) ?>" class="item_menu_all">
 								<a href="<?= $arr_menu[$i]['url'] ?>" class="item_menu_p"><?= $arr_menu[$i]['titulo'] ?></a><i class="fa fa-circle menu_p_sep" aria-hidden="true"></i>
 
 								<?php if( $arr_menu[$i]['submenu'] != "" ){?>
@@ -424,6 +415,36 @@ $cidadePadrao = "natal";
 			</div>
 
 	<!-- </div> -->
+
+<?php
+		 for ($i=0; $i < count($arr_menu); $i++) {
+
+			$style_menu =  $style_menu."
+
+				#".str_replace(" ", "", $arr_menu[$i]['titulo'] ).":hover .item_menu_p{
+					  color: ".getColor( $arr_menu[$i]['titulo'] ).";
+					  border-top: 2px solid ".getColor( $arr_menu[$i]['titulo'] ).";
+				}
+				#".str_replace(" ", "", $arr_menu[$i]['titulo'] ).":hover .item_submenu_p{
+					  border-color: ".getColor( $arr_menu[$i]['titulo'] )." ;
+				}
+				#".str_replace(" ", "", $arr_menu[$i]['titulo'] )."	.box2_menu p{
+					  color: ".getColor( $arr_menu[$i]['titulo'] ).";
+				}
+				#".str_replace(" ", "", $arr_menu[$i]['titulo'] )." .box1_menu li a:hover, #".str_replace(" ", "", $arr_menu[$i]['titulo'] )." .box2_menu li a:hover{
+					color: ".getColor( $arr_menu[$i]['titulo'] ).";
+				}
+				#".str_replace(" ", "", $arr_menu[$i]['titulo'] )." .box1_menu li a::before, #".str_replace(" ", "", $arr_menu[$i]['titulo'] )." .box2_menu li a::before{
+					color: ".getColor( $arr_menu[$i]['titulo'] ).";
+				}
+
+			";
+
+		}
+
+		echo '<style type="text/css">'.$style_menu."</style>";
+ ?>
+
 
 
 <?php

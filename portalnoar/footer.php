@@ -3,7 +3,7 @@
 			<div class="container">
 					<div class="footer_geral_col1">
 						<?php
-						$args = array('hide_empty'=>0, 'orderby' => 'name', 'order' => 'ASC', 'parent' => 0);
+						$args = array('hide_empty'=>0, 'orderby' => 'name', 'order' => 'ASC', 'parent' => 0, 'exclude' => 28994);
 						$categorias = get_categories( $args );
 						foreach($categorias as $categoria) {
 						?>
@@ -12,7 +12,17 @@
 
 						<button>ANÚNCIE JÁ</button>
 
-						<img style="width: 80%;" src="http://dev.portalnoar.com.br/wp-content/themes/portalnoar/imgs/redes_com.png">
+						<div class="div_all_redes_footer">
+							 <i class="fa fa-whatsapp whatsapp_rede_btn_footer" aria-hidden="true"></i>
+							 <p class="desc_reds_blog_footer whatsapp_rede_footer">Envie sua notícia: 848448484848</p>
+							 <a href="https://pt-br.facebook.com/PortalNoArBR/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+							 <a href="https://twitter.com/portalnoarbr"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+							 <a href="https://plus.google.com/105605278984900938670"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+						</div>
+
+
+
+						<!-- <img style="width: 80%;" src="http://dev.portalnoar.com.br/wp-content/themes/portalnoar/imgs/redes_com.png"> -->
 
 
 					</div>
@@ -179,18 +189,14 @@
 			</div>
 		</div>
 
-		<div class="box_envie_noticia box_envie_algo">
+	<!-- 	<div class="box_envie_noticia box_envie_algo">
 			<div class="form_envie_noticia form_envie_footer">
 				<form action="">
 					<p class="titulo_form_footer titulo_form_noticia">Envie sua notícia</p>
 					<span class="box_fechar_noticia box_fechar_footer">X</span>
-					<!-- <p class="titulo_input_footer">Nome:</p> -->
 					<input class="input_text_footer" name="nome" placeholder="Nome">
-					<!-- <p class="titulo_input_footer">Email</p> -->
 					<input class="input_text_footer" name="email" placeholder="E-mail">
-					<!-- <p class="titulo_input_footer">Telefone</p> -->
 					<input class="input_text_footer" name="telefone" placeholder="Telefone">
-					<!-- <p class="titulo_input_footer">Relato</p> -->
 					<textarea class="input_textarea_footer" name="noticia" placeholder="Notícia"></textarea>
 					<p class="titulo_input_footer">Selecione o arquivo:</p>
 				  <input type="file" name="img" multiple>
@@ -198,7 +204,7 @@
 				</form>
 
 			</div>
-		</div>
+		</div> -->
 
 		<div class="novidades_email">
 			<div class="container">
@@ -271,19 +277,19 @@
 				}).toggle();
 			});
 
-			$('.bt_envie_noticia').click(function(event) {
-				$('.box_envie_noticia').animate({
-					'opacity': '1'},
-					500, function() {
-				}).toggle();
-			});
+			// $('.bt_envie_noticia').click(function(event) {
+			// 	$('.box_envie_noticia').animate({
+			// 		'opacity': '1'},
+			// 		500, function() {
+			// 	}).toggle();
+			// });
 
-			$('.box_fechar_noticia').click(function(event) {
-				$('.box_envie_noticia').animate({
-					'opacity': '0'},
-					500, function() {
-				}).toggle();
-			});
+			// $('.box_fechar_noticia').click(function(event) {
+			// 	$('.box_envie_noticia').animate({
+			// 		'opacity': '0'},
+			// 		500, function() {
+			// 	}).toggle();
+			// });
 
 			$('#count').click(function() {
     		$('#idpost').html(function() {
@@ -291,7 +297,7 @@
 									'idpost' 				: $('#idpost').attr('value'),
 								};
 		        $.ajax({
-		            url: 'http://dev.portalnoar.com.br/contador-de-compartilhamentos/',
+		            url: 'http://www.portalnoar.com.br/contador-de-compartilhamentos/',
 		            type: 'POST',
 		            data: formData,
 		        });
@@ -305,7 +311,7 @@
 									'idpost' 				: $('#idpost').attr('value'),
 								};
 		        $.ajax({
-		            url: 'http://dev.portalnoar.com.br/contador-de-compartilhamentos/',
+		            url: 'http://www.portalnoar.com.br/contador-de-compartilhamentos/',
 		            type: 'POST',
 		            data: formData,
 		        });
